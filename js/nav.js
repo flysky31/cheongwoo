@@ -6,20 +6,6 @@ $(document).ready(function() {
     let navItems =$('.nav-item');    
 
   
-
-    // $(window).scroll(function(){
-    //   if( $(window).scrollTop() > 50){
-    //       $header.addClass("on");
-    //       $('.regular').css('color', 'black');
-    //       $('#header .logo img').attr('src', 'https://www.chungwoocon.co.kr/new/img/logo.png');
-    //       $('#header .hamburger-menu span').addClass("on");
-    //   } else {
-    //       $header.removeClass("on");
-    //       $('.regular').css('color', 'white');
-    //       $('#header .logo img').attr('src', 'https://www.chungwoocon.co.kr/new/img/logo_hover.png');
-    //   }
-    // });
-
     //서브 헤더 배경 white로 변경  
     $header.addClass("on");
     $('.regular').css('color', 'black');
