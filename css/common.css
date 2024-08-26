@@ -155,8 +155,9 @@ body.menu--open #header .navbar .container #navbarNav {
 }
 #header .navbar .container #navbarNav ul > li.nav-item .sub_menu {
   position: absolute;
-  top: 110px;
-  left: 0;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   width: 100%;
   background: rgba(255, 255, 255, 0.5);
