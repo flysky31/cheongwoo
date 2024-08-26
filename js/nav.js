@@ -7,10 +7,10 @@ $(document).ready(function() {
 
   
     //서브 헤더 배경 white로 변경  
-    $header.addClass("on");
-    $('.regular').css('color', 'black');
-    $('#header .logo img').attr('src', '../img/logo.png');
-    $('#header .hamburger-menu span').addClass("on");
+    // $header.addClass("on");
+    // $('.regular').css('color', 'black');
+    // $('#header .logo img').attr('src', '../img/logo.png');
+    // $('#header .hamburger-menu span').addClass("on");
     
 
     $("#aside .navbar-nav_m li").click(function(){
