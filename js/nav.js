@@ -3,61 +3,44 @@ $(document).ready(function() {
     let $header = $("#header");
     let burger = $('.navbar-toggler');
     let menu = $('.full-menu');
-    let navItems =$('.nav-item');
-    
-    // burger.click(function(){
-    //   burger.toggleClass('on');
-    //   menu.toggleClass('menu--open');
-    // });
-    
-    // navItems.hover(function(){
-    //   navItems.not($(this)).toggleClass('nav__item--hover');
-    // });
-
-    // $('.navbar-toggler').on('click', function(e){
-    //   e.preventDefault();
-    //   $(this).toggleClass('active');
-    //   $('#lnb').toggleClass('menu--open');
-    //   $('body').toggleClass('menu--open');
-    // });
+    let navItems =$('.nav-item');    
 
   
 
-    $(window).scroll(function(){
-      if( $(window).scrollTop() > 50){
-          $header.addClass("on");
-      } else {
-          $header.removeClass("on");
-      }
-
-    });
-
-    // $(".navbar-toggler").click(function(){
-    //  //   $("#aside").toggleClass("on");
-    //     //$(".aside_bg").toggleClass("on");
-   
-    //     $(this).toggleClass("on");
-
-    //     function toggleClassBasedOnScreenSize() {
-
-    //     if ($(window).width() > 1024) { 
-    //       //  $("#aside").removeClass("on");
-    //         //$(".aside_bg").removeClass("on");
-            
-    //         $(".navbar-toggler").removeClass("on");
-    //         $("#aside .navbar-nav_m li").find(".sub").removeClass("on");
-    //       } else {
-          
-    //       }
-    //     }
-    //     toggleClassBasedOnScreenSize();
-
-    //     $(window).resize(function() {
-    //         toggleClassBasedOnScreenSize();
-    //     });
-
-     
+    // $(window).scroll(function(){
+    //   if( $(window).scrollTop() > 50){
+    //       $header.addClass("on");
+    //       $('.regular').css('color', 'black');
+    //       $('#header .logo img').attr('src', 'https://www.chungwoocon.co.kr/new/img/logo.png');
+    //       $('#header .hamburger-menu span').addClass("on");
+    //   } else {
+    //       $header.removeClass("on");
+    //       $('.regular').css('color', 'white');
+    //       $('#header .logo img').attr('src', 'https://www.chungwoocon.co.kr/new/img/logo_hover.png');
+    //   }
     // });
+
+    //서브 헤더 배경 white로 변경  
+    $header.addClass("on");
+    $('.regular').css('color', 'black');
+    $('#header .logo img').attr('src', '../img/logo.png');
+    $('#header .hamburger-menu span').addClass("on");
+    
+
+    $("#aside .navbar-nav_m li").click(function(){
+        $(this).toggleClass("on");
+        //$(this).find(".sub").slideDown();
+        $('#aside .navbar-nav_m li').not(this).removeClass('on');        
+        let subElement = $(this).find(".sub");
+
+        if (subElement.is(":visible")) {
+          subElement.slideUp();
+        } else {
+          $("#aside .navbar-nav_m li .sub").stop().slideUp();
+          subElement.stop().slideDown();
+        }
+    });
+    
     $(".aside_bg").click(function(){
         $("#aside").removeClass("on");
         $(".aside_bg").removeClass("on");
@@ -94,45 +77,60 @@ $(document).ready(function() {
       })
       
 
-    // $("#aside .navbar-nav_m li").click(function() {
-    //   if (window.innerWidth <= 1024) { // 체크할 화면 너비 값
-    //     $(this).toggleClass("on");
-    //     $('#aside .navbar-nav_m li').not(this).removeClass('on');
-    //     let subElement = $(this).find(".sub");
-    
-    //     if (subElement.is(":visible")) {
-    //       subElement.slideUp();
-    //     } else {
-    //       $("#aside .navbar-nav_m li .sub").slideUp();
-    //       subElement.slideDown();
-    //     }
-    //   }
-    // });
 
-    
-
-
-
-    $('#header .inner .navbar-nav').mouseenter(function(){
-        $("#header").addClass("active");
-
-    });
-    $('#header .inner .navbar-nav').mouseleave(function(){
-      $("#header").removeClass("active");
-
-  });
     $('#header .inner .navbar-nav li').mouseenter(function(){
       $(this).addClass("on");
-      $(this).find('.sub_menu').addClass("on");
-
+      $(this).children('.sub_menu').stop().addClass("on");
+      $("#navbarNav").addClass("on");
     });
     $('#header .inner .navbar-nav li').mouseleave(function(){
         $(this).removeClass("on");
-        $(this).find('.sub_menu').removeClass("on");
-   
-        
+        $(this).find('.sub_menu').stop().removeClass("on");
     });
-   
-});
     
+    $('#header').mouseenter(function(){
+        //$(this).addClass('active');
+        $('#header .regular').css('color', 'black');
+        $('#header .logo img').attr('src', 'https://www.chungwoocon.co.kr/new/img/logo.png');
+    })
+    $('#header').mouseleave(function(){
+        //$(this).removeClass('active');
+        $("#navbarNav").removeClass("on");
+        if( $(window).scrollTop() <= 50 ){
+            $('#header .regular').css('color', 'black');
+            $('#header .logo img').attr('src', 'https://www.chungwoocon.co.kr/new/img/logo.png');
+        }
+    })
+    
+    function scrollToTop() {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+    }
+    
+    $('#topBtn, #moveTop, #moveTop01').click(scrollToTop);
+    
+});
+
+
+function aniCtrl(){
+    var _st = $(window).scrollTop();
+   
+    var _wH = $(window).height();
+
+    $('.ani-item').each(function(){
+        var _this = $(this);
+        if( _this.offset().top <= (_st + _wH) && !_this.hasClass('done') ){
+            _this.addClass('done');
+        }
+    });
+}
+
+$(document).ready(function(){
+
+    aniCtrl();
+
+    $(window).scroll(function(){
+        aniCtrl();
+    });
+});
+
 
