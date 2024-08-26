@@ -28,7 +28,7 @@ $(document).ready(function() {
           disableOnInteraction: false,
         },
       loop:true,
-      //effect:"fade",
+      slideToClickedSlide : true,
       speed:2000,
       
     });
@@ -41,7 +41,7 @@ $(document).ready(function() {
           disableOnInteraction: false,
         },
       loop:true,
-      //effect:"fade",
+      slideToClickedSlide : true,
       speed:2000,
       
     });
@@ -53,7 +53,7 @@ $(document).ready(function() {
           disableOnInteraction: false,
         },
       loop:true,
-      //effect:"fade",
+      slideToClickedSlide : true,
       speed:2000,
       
     });
