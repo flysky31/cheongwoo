@@ -72,12 +72,12 @@ div.btn {
 #deps01 .main_Swiper {
   position: relative;
 }
-#deps01 .main_Swiper:hover .swiper-button-prev {
+/* #deps01 .main_Swiper:hover .swiper-button-prev {
   opacity: 1;
 }
 #deps01 .main_Swiper:hover .swiper-button-next {
   opacity: 1;
-}
+} */
 #deps01 .swiper-button-prev {
   opacity: 0;
   transition: all 1s;
