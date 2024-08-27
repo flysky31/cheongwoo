@@ -40,7 +40,7 @@ body.menu--open #header .navbar .container #navbarNav {
   transform: translateY(0%);
 }
 #header.active {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255,1);
 }
 #header.active .navbar .logo img {
   filter: invert(1);
@@ -64,7 +64,7 @@ body.menu--open #header .navbar .container #navbarNav {
   background: #000;
 }
 #header.on {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255,1);
 }
 #header.on .navbar .logo img {
   filter: invert(1);
@@ -160,7 +160,7 @@ body.menu--open #header .navbar .container #navbarNav {
   transform: translateX(-50%);
   text-align: center;
   width: 200px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255,1);
   height: auto;
   z-index: 1;
   transition: opacity 0.5s;
