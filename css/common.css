@@ -320,17 +320,16 @@ body.menu--open #header .navbar .container #navbarNav {
   display: block;
 }
 #aside #lnb {
-  position: fixed;
-  display: block;
-  right: -120%;
-  transition: 0.5s;
-  top: 0;
-  padding: 100px 30px;
-  width: 40%;
-  height: 100%;
-  box-sizing: border-box;
-  background-color: #1A6E41;
-  z-index: 50;
+    right: -120%;
+    transition: 0.5s;
+    top: 0;
+    padding: 150px 5% 100px;
+    width: 40%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 50;
+    display: none;
 }
 #aside #lnb li {
   margin: 0 0 20px 0;
