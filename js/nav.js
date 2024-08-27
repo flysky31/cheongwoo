@@ -4,14 +4,15 @@ $(document).ready(function() {
     let burger = $('.navbar-toggler');
     let menu = $('.full-menu');
     let navItems =$('.nav-item');    
-
-  
-    //서브 헤더 배경 white로 변경  
-    // $header.addClass("on");
-    // $('.regular').css('color', 'black');
-    // $('#header .logo img').attr('src', '../img/logo.png');
-    // $('#header .hamburger-menu span').addClass("on");
     
+    $(window).scroll(function(){
+      if( $(window).scrollTop() > 50){
+          $header.addClass("on");
+      } else {
+          $header.removeClass("on");
+      }
+
+    });
 
     $("#aside .navbar-nav_m li").click(function(){
         $(this).toggleClass("on");
@@ -36,7 +37,6 @@ $(document).ready(function() {
     });
 
 
-    // $("#aside .navbar-nav_m li .sub").hide();
  
       $('.navbar-toggler').click(function(){
           $(this).toggleClass('on');
