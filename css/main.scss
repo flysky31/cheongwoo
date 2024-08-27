@@ -83,7 +83,7 @@ div.btn{
 
 
     .swiper-button-prev{
-        opacity: 0;
+        display:none;
         transition: all 1s;
         left: 5%;
         width: 70px;
@@ -97,7 +97,7 @@ div.btn{
         }
     }
     .swiper-button-next{
-        opacity: 0;
+        display:none;
         transition: all 1s;
         right: 5%;
         width: 70px;
