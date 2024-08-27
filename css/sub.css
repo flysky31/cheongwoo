@@ -556,6 +556,12 @@
 .board_tab2 {
   margin: 100px 0 50px;
 }
+.board_tab2 .tab-pane{
+  display:none;
+}
+.board_tab2 .tab-pane.active{
+  display:block;
+}
 .board_tab2 ul {
   display: flex;
   align-items: center;
