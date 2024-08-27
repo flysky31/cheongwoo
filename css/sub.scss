@@ -633,7 +633,12 @@
 
 .board_tab2{
     margin: 100px 0 50px;
-  
+    .tab-pane{
+        display:none;
+        &.active{
+            display:block;
+        }
+    }
     ul{
         display: flex;
         align-items: center;
